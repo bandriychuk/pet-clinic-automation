@@ -72,7 +72,7 @@ subprojects {
         useJUnit5 { version = "2.26.0" }
 
         reporting {
-            baseDir = "report/allure-reports"
+            baseDir = "build/report/allure-reports"
         }
     }
 

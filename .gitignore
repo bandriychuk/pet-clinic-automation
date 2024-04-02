@@ -16,7 +16,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .idea/
-
+.allure/
 ### Eclipse ###
 .apt_generated
 .classpath
