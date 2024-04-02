@@ -1,0 +1,3 @@
+rootProject.name = 'pet-clinic-automation'
+include 'api-tests'
+

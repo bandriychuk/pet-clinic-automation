@@ -1,0 +1,87 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version "2.7.11" apply false
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id "io.qameta.allure" version "2.8.1"
+}
+
+allprojects {
+
+    sourceCompatibility = '11'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'io.qameta.allure'
+
+    dependencyManagement {
+        imports {
+            mavenBom SpringBootPlugin.BOM_COORDINATES
+        }
+    }
+
+    dependencies {
+        implementation "org.springframework.boot:spring-boot-starter"
+        implementation "org.springframework.boot:spring-boot-starter-web"
+        implementation "org.springframework.retry:spring-retry"
+        implementation "org.springframework:spring-aspects"
+        testImplementation "org.springframework.boot:spring-boot-starter-test"
+
+        implementation "io.rest-assured:rest-assured"
+        implementation "com.google.guava:guava:32.0.1-jre"
+        implementation "org.aeonbits.owner:owner:1.0.12"
+        implementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
+                {
+                    exclude group: 'io.qameta.allure', module: 'allure-junit-platform'
+                }
+
+        // cucumber
+        def cucumberVersion = "7.12.1"
+        implementation "io.cucumber:cucumber-spring:$cucumberVersion"
+        implementation "io.cucumber:cucumber-java:$cucumberVersion"
+        implementation "io.cucumber:cucumber-junit-platform-engine:$cucumberVersion"
+        implementation "org.junit.platform:junit-platform-suite"
+
+        // allure
+        def allureVersion = "2.22.2"
+        implementation "io.qameta.allure:allure-rest-assured:$allureVersion"
+        implementation "io.qameta.allure:allure-cucumber7-jvm:$allureVersion"
+
+        // lombok
+        compileOnly "org.projectlombok:lombok"
+        annotationProcessor "org.projectlombok:lombok"
+        testCompileOnly "org.projectlombok:lombok"
+        testAnnotationProcessor "org.projectlombok:lombok"
+    }
+
+    allure {
+        version = "2.8.1"
+        aspectjweaver = true
+        configuration = "implementation"
+        autoconfigure = true
+        aspectjVersion = '1.9.8'
+
+        useJUnit5 { version = "2.26.0" }
+
+        reporting {
+            baseDir = "report/allure-reports"
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+
+        testLogging {
+            events "passed", "skipped", "failed"
+        }
+        ignoreFailures = true
+    }
+}
