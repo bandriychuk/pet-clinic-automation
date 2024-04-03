@@ -1,8 +1,7 @@
 pet.clinic:
   api-tests:
     base-uri: ${ENV_NAME:http://localhost:9966/petclinic/}
-    locale: "en_UK"
-    logging: true
+    logging: ${LOGGING:true}
 
 spring:
   main:
