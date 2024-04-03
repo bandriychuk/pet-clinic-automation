@@ -1,6 +1,5 @@
 package pet.clinic.api.services;
 
-import pet.clinic.api.ApiConfigProperties;
 import io.cucumber.spring.ScenarioScope;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
@@ -12,6 +11,7 @@ import io.restassured.specification.RequestSpecification;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pet.clinic.api.ApiConfigProperties;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,7 +24,8 @@ import static java.util.Collections.singletonList;
 public class ApiService {
 
     @Autowired
-    protected ApiConfigProperties apiTestsProperties;
+    public ApiConfigProperties apiTestsProperties;
+
     protected RequestSpecification setUp() {
         return RestAssured
                 .given()

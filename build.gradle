@@ -8,19 +8,15 @@ plugins {
 }
 
 allprojects {
-
-    sourceCompatibility = '11'
-
-    repositories {
-        mavenCentral()
-    }
-}
-
-subprojects {
     apply plugin: 'java'
     apply plugin: 'java-library'
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'io.qameta.allure'
+
+    repositories {
+        mavenCentral()
+
+    }
 
     dependencyManagement {
         imports {
@@ -42,7 +38,6 @@ subprojects {
                 {
                     exclude group: 'io.qameta.allure', module: 'allure-junit-platform'
                 }
-
         // cucumber
         def cucumberVersion = "7.12.1"
         implementation "io.cucumber:cucumber-spring:$cucumberVersion"

@@ -1,12 +1,13 @@
 package pet.clinic.api;
 
-import pet.clinic.api.services.owner.OwnerApiService;
-import pet.clinic.api.services.user.UserApiService;
 import io.cucumber.spring.ScenarioScope;
 import lombok.Getter;
 import lombok.experimental.Accessors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pet.clinic.api.services.owner.OwnerApiService;
+import pet.clinic.api.services.user.UserApiService;
+import pet.clinic.api.services.visit.VisitApiService;
 
 @Component
 @ScenarioScope
@@ -19,5 +20,8 @@ public class Services {
 
     @Autowired
     protected OwnerApiService ownerApiService;
+
+    @Autowired
+    protected VisitApiService visitApiService;
 
 }

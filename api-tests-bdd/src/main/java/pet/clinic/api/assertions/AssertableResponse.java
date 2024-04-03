@@ -1,10 +1,10 @@
 package pet.clinic.api.assertions;
 
-import pet.clinic.api.conditions.Condition;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import pet.clinic.api.conditions.Condition;
 
 @RequiredArgsConstructor
 @Slf4j

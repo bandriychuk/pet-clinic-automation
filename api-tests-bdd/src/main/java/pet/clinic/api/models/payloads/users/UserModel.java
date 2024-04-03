@@ -1,4 +1,4 @@
-package pet.clinic.api.models.payloads.user;
+package pet.clinic.api.models.payloads.users;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

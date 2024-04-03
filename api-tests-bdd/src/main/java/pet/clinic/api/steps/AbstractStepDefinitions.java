@@ -1,10 +1,11 @@
 package pet.clinic.api.steps;
 
-import pet.clinic.api.ApiConfigProperties;
-import pet.clinic.api.Services;
-import pet.clinic.api.state.RuntimeState;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
+import pet.clinic.api.ApiConfigProperties;
+import pet.clinic.api.Services;
+import pet.clinic.api.parameter.CustomParameterTypes;
+import pet.clinic.api.state.RuntimeState;
 
 @Getter
 public class AbstractStepDefinitions {
@@ -17,5 +18,8 @@ public class AbstractStepDefinitions {
 
     @Autowired
     protected RuntimeState runtimeState;
+
+    @Autowired
+    protected CustomParameterTypes cpt;
 
 }

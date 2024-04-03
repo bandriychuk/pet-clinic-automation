@@ -7,15 +7,21 @@ import java.util.Map;
 
 import static java.util.Optional.ofNullable;
 
+/*
+ * API docs
+ * http://localhost:9966/petclinic/swagger-ui/index.html#/users/addUser
+ * */
 @Value
-public class UserParameters {
+public final class UserParameters {
 
     @NonNull
+    private final
     String username;
-    String password;
+    private final String password;
     @NonNull
+    private final
     String roles;
-    Boolean enabled;
+    private final Boolean enabled;
 
     public UserParameters(Map<String, String> values) {
         this.username = values.get("username");

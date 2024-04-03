@@ -1,10 +1,10 @@
 package pet.clinic.api.services.user;
 
-import pet.clinic.api.models.payloads.user.UserModel;
-import pet.clinic.api.services.user.parameters.UserParameters;
 import io.cucumber.spring.ScenarioScope;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import pet.clinic.api.models.payloads.users.UserModel;
+import pet.clinic.api.services.user.parameters.UserParameters;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -37,7 +37,7 @@ public class UserApiHelper {
                     .as("Verify created 'ENABLED'")
                     .isEqualTo(expectedUserValues.getEnabled());
         } else {
-            throw new IllegalStateException("You must specify at required fields to validate! Required: USERNAME, PASSWORD, ROLES. \n Optional: ENABLED");
+            throw new IllegalStateException("You must specify the required fields to validate! Requires: USERNAME, PASSWORD, ROLES. \n Optional: ENABLED");
         }
 
     }

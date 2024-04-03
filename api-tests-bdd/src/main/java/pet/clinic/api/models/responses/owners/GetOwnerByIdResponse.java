@@ -1,14 +1,18 @@
-package pet.clinic.api.models.responses.owner;
+package pet.clinic.api.models.responses.owners;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Builder;
-import lombok.Data;
-
 @Data
 @Builder
-public class CreateOwnerResponse {
+@NoArgsConstructor
+@AllArgsConstructor
+public class GetOwnerByIdResponse {
 
     @JsonProperty("pets")
     private List<PetsItem> pets;
@@ -31,9 +35,10 @@ public class CreateOwnerResponse {
     @JsonProperty("id")
     private int id;
 
-
-    @Builder
     @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class PetsItem {
 
         @JsonProperty("visits")
@@ -53,22 +58,25 @@ public class CreateOwnerResponse {
 
         @JsonProperty("birthDate")
         private String birthDate;
-
-        @Data
-        @Builder
-        public static class Type {
-
-            @JsonProperty("name")
-            private String name;
-
-            @JsonProperty("id")
-            private int id;
-
-        }
     }
 
     @Data
     @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class Type {
+
+        @JsonProperty("name")
+        private String name;
+
+        @JsonProperty("id")
+        private int id;
+    }
+
+    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class VisitsItem {
 
         @JsonProperty("date")
