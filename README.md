@@ -20,6 +20,32 @@ Before start:
 
 
 ##  Project Structure
+  - assertions
+  - conditions
+
+
+  - models:
+    - payloads
+    - responses
+
+
+  - parameter
+    - Custom ParameterTypes that extend standard ones: https://github.com/cucumber/cucumber-expressions#readme
+
+
+  - services
+
+
+  - state
+    - General class to store runtime state across step definitions in one Scenario/Example. 
+    - Can be autowired into step definitions class.
+
+
+  - steps
+    - described action steps
+     
+      
+
 ## Environment Variables
 
 `ENV_NAME` - String value for launching tests on different environments
