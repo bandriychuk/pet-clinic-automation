@@ -7,8 +7,12 @@ import pet.clinic.api.Services;
 import pet.clinic.api.parameter.CustomParameterTypes;
 import pet.clinic.api.state.RuntimeState;
 
+
+/**
+ * Abstract class for step definitions that includes common dependencies.
+ */
 @Getter
-public class AbstractStepDefinitions {
+public abstract class AbstractStepDefinitions {
 
     @Autowired
     protected ApiConfigProperties apiConfig;
