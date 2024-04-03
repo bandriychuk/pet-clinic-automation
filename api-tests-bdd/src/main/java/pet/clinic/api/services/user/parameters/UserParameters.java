@@ -1,4 +1,4 @@
-package pet.clinic.api.services.users.parameters;
+package pet.clinic.api.services.user.parameters;
 
 import lombok.NonNull;
 import lombok.Value;

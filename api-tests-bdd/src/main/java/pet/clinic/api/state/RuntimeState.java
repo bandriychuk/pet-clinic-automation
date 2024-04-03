@@ -1,6 +1,6 @@
 package pet.clinic.api.state;
 
-import pet.clinic.api.models.payloads.users.UserModel;
+import pet.clinic.api.models.payloads.user.UserModel;
 import io.cucumber.spring.ScenarioScope;
 import lombok.Getter;
 import org.springframework.stereotype.Component;

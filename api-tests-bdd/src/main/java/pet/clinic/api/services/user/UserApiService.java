@@ -1,9 +1,9 @@
-package pet.clinic.api.services.users;
+package pet.clinic.api.services.user;
 
 import pet.clinic.api.assertions.AssertableResponse;
-import pet.clinic.api.models.payloads.users.UserModel;
+import pet.clinic.api.models.payloads.user.UserModel;
 import pet.clinic.api.services.ApiService;
-import pet.clinic.api.services.users.parameters.UserParameters;
+import pet.clinic.api.services.user.parameters.UserParameters;
 import io.cucumber.spring.ScenarioScope;
 import io.qameta.allure.Step;
 import lombok.Getter;
@@ -17,7 +17,7 @@ import java.util.List;
 @Slf4j
 @Component
 @ScenarioScope
-public class UsersApiService extends ApiService {
+public class UserApiService extends ApiService {
 
     @Autowired
     protected UserApiHelper userApiHelper;

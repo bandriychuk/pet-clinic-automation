@@ -6,8 +6,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
 import pet.clinic.api.conditions.Conditions;
-import pet.clinic.api.models.payloads.users.UserModel;
-import pet.clinic.api.services.users.parameters.UserParameters;
+import pet.clinic.api.models.payloads.user.UserModel;
+import pet.clinic.api.services.user.parameters.UserParameters;
 import pet.clinic.api.steps.AbstractStepDefinitions;
 
 import java.util.Map;
@@ -22,7 +22,7 @@ public class UserSteps extends AbstractStepDefinitions {
 
     @When("Create new user with values:")
     public void createNewUserWithValues(UserParameters userParameters) {
-        UserModel createUser = services.usersApiService()
+        UserModel createUser = services.userApiService()
                 .createUser(userParameters)
                 .shouldHave(Conditions.statusCode(201))
                 .asPojo(UserModel.class);
@@ -33,7 +33,7 @@ public class UserSteps extends AbstractStepDefinitions {
     @Then("Verify that created user {runtimeState} has correct value:")
     public void verifyThatUserHasCorrectValue(UserModel userModel, UserParameters userParameters) {
         services
-                .usersApiService()
+                .userApiService()
                 .getUserApiHelper()
                 .verifyThatCreatedUserHasCorrectValues(userModel, userParameters);
     }

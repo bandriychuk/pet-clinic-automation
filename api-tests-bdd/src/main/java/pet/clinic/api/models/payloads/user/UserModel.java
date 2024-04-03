@@ -1,4 +1,4 @@
-package pet.clinic.api.models.payloads.users;
+package pet.clinic.api.models.payloads.user;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -13,6 +13,9 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * !! UserModel is used for building request and casts  response to objects due to the same fields model
+ */
 public class UserModel {
 
     @JsonProperty("username")

@@ -1,7 +1,7 @@
-package pet.clinic.api.services.users;
+package pet.clinic.api.services.user;
 
-import pet.clinic.api.models.payloads.users.UserModel;
-import pet.clinic.api.services.users.parameters.UserParameters;
+import pet.clinic.api.models.payloads.user.UserModel;
+import pet.clinic.api.services.user.parameters.UserParameters;
 import io.cucumber.spring.ScenarioScope;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
